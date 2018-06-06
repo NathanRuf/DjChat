@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+
+  body {
+    background-color: #bed5dd;
+  }
+
+  #container {
+    background-color: #EEE;
+    border: 1px solid #AAA;
+    margin: 0 auto;
+    text-align:center;
+    border-radius: 5px;
+    width: 50%;
+    padding: 10px;
+    min-height: 250px;
+  }
+
+  h1 {
+    font-weight: lighter;
+    color: #6886ff;
+    border-bottom: 1px solid #6886ff;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  h2 {
+    border: 1px solid #6e5ddd;
+    color: #6e5ddd;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+
+  }
+
+  a {
+    color: #6886ff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #6e5ddd;
+    text-decoration: underline;
+  }
+
+  </style>
+
   <meta charset="utf-8">
-  <title>{% block title %}Django Simple Login{% endblock %}</title>
+  <title>Hello CS356 From Django !</title>
 </head>
 <body>
-  <header>
-    <h1>Django Simple Login</h1>
-    {% if user.is_authenticated %}
-      Hi {{ user.username }}!
-      <a href="{% url 'logout' %}">logout</a>
-    {% else %}
-      <a href="{% url 'login' %}">login</a>
-    {% endif %}
-  </header>
-  <hr>
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
-  <hr>
-  <footer>
-    <a href="http://simpleisbetterthancomplex.com">simpleisbetterthancomplex.com</a>
-  </footer>
+
+  <div id="container">
+    <header>
+      <h1>Hello CS356 From Django ! </h1><br />
+      <div>
+        {% if user.is_authenticated %}
+        Hi <b> {{ user.username }} </b> !
+        <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+        <a href="{% url 'signup' %}">Signup </a><br />
+        <a href="{% url 'login' %}">Login </a>
+      {% endif %}
+    </header>
+
+    <main><br />
+      {% block content %}
+      {% endblock %}
+    </main>
+</div>
 </body>
 </html>
