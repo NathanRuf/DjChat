@@ -2,6 +2,7 @@
 
 {% block content %}
   <h2>Sign up</h2>
+  <!-- Since Sign Up is built into Django, you only need to define the view as follows: -->
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

@@ -2,20 +2,20 @@
 
 {% block title %}Login{% endblock %}
 
-{% block content %}
+{% block content %} <!-- All of these {% %} retrieve information from base.html (extended at the top of each page) -->
   <h2>Home</h2>
   <br />
 
   {% if user.is_authenticated %}
     YOU SIGNED IN!<br /><br />
 
+    Now it's time to take the quiz: <a href="https://goo.gl/forms/yLznEehRJzYvbomg1">CLICK HERE</a> !<br />
+
     Check out the sourcecode for this project on Github <a href="https://github.com/NathanRuf/DjChat">here</a>.
   {% else %}
     Hey! <br />
-    Enjoying the Presentation? We thought Django was neat.<br /> Sign up or log in!<br />
+    Enjoying the Presentation? We thought Django was neat.<br /> Sign up or log in above!<br />
 
   {% endif %}
-
-
 
 {% endblock %}
